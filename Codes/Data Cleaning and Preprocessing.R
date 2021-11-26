@@ -40,13 +40,13 @@ head(df)
 df[['created']] <- strptime(df[['created']], format ="%d-%m-%Y %H:%M")
 head(df)
 
-#Extract username from the text column and rebuild the data frame
+# Extract username from the text column and rebuild the data frame
 
 df$text <- str_extract(df$text,'\\@(.*?)\\:') %>%
   str_sub(1, -2)
 head(dfd)
 
-#Extract Text from HTML script from statusSource column and rebuild the data frame 
+# Extract Text from HTML script from statusSource column and rebuild the data frame 
 
 p_text <-function(source){
   
